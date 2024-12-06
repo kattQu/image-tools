@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片滤镜工具 - 图片工具箱</title>
+    <link rel="stylesheet" href="../css/compress.css">
+    <link rel="stylesheet" href="../css/filter.css">
+</head>
+<body>
+    <!-- 顶部标题栏 -->
+    <header>
+        <div class="header-content">
+            <a href="../" class="back-link">返回首页</a>
+            <h1>图片滤镜工具</h1>
+            <p>为图片添加专业的滤镜效果</p>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <!-- 上传区域 -->
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-hint">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="8" width="48" height="48" rx="4" fill="#FF9800"/>
+                    <circle cx="24" cy="24" r="8" fill="white"/>
+                    <path d="M16 40L28 28L48 48H16V40Z" fill="white"/>
+                </svg>
+                <p>将图片拖放到此处，或点击选择图片</p>
+                <p class="sub-hint">支持 JPG、PNG、WebP 格式</p>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+        </div>
+
+        <!-- 图片预览和滤镜控制区域 -->
+        <div class="filter-workspace" style="display: none;">
+            <div class="preview-container">
+                <!-- 原图���览 -->
+                <div class="preview-section">
+                    <h3>原图</h3>
+                    <div class="image-container original">
+                        <img id="originalImage" src="" alt="原图">
+                    </div>
+                </div>
+                
+                <!-- 效果预览 -->
+                <div class="preview-section">
+                    <h3>效果预览</h3>
+                    <div class="image-container filtered">
+                        <img id="filteredImage" src="" alt="滤镜效果">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 滤镜控制面板 -->
+            <div class="filter-controls">
+                <div class="preset-filters">
+                    <h3>预设滤镜</h3>
+                    <div class="filter-buttons">
+                        <button data-filter="none" class="active">原始</button>
+                        <button data-filter="grayscale">黑白</button>
+                        <button data-filter="sepia">复古</button>
+                        <button data-filter="invert">反色</button>
+                        <button data-filter="warm">暖色</button>
+                        <button data-filter="cool">冷色</button>
+                        <button data-filter="vintage">老照片</button>
+                    </div>
+                </div>
+
+                <div class="filter-adjustments">
+                    <h3>滤镜调节</h3>
+                    <div class="adjustment-controls">
+                        <div class="control-group">
+                            <label for="brightness">亮度</label>
+                            <input type="range" id="brightness" min="0" max="200" value="100">
+                            <span class="value">100%</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="contrast">对比度</label>
+                            <input type="range" id="contrast" min="0" max="200" value="100">
+                            <span class="value">100%</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="saturation">饱和度</label>
+                            <input type="range" id="saturation" min="0" max="200" value="100">
+                            <span class="value">100%</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="blur">模糊</label>
+                            <input type="range" id="blur" min="0" max="10" value="0">
+                            <span class="value">0px</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="hue">色相</label>
+                            <input type="range" id="hue" min="0" max="360" value="0">
+                            <span class="value">0°</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 下载按钮 -->
+            <button id="downloadBtn" class="download-btn">下载处理后的图片</button>
+        </div>
+    </main>
+
+    <script src="../js/filter.js"></script>
+</body>
+</html> 

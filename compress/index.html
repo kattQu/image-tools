@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线图片压缩工具 - 图片工具箱</title>
+    <link rel="stylesheet" href="../css/compress.css">
+</head>
+<body>
+    <!-- 顶部标题栏 -->
+    <header>
+        <div class="header-content">
+            <a href="../" class="back-link">返回首页</a>
+            <h1>在线图片压缩工具</h1>
+            <p>简单快速的图片压缩服务</p>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <!-- 拖拽上传区域 -->
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-hint">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 8L44 20H36V36H28V20H20L32 8Z" fill="#2196F3"/>
+                    <path d="M56 52V36H48V52H16V36H8V52C8 54.2091 9.79086 56 12 56H52C54.2091 56 56 54.2091 56 52Z" fill="#2196F3"/>
+                </svg>
+                <p>将图片拖放到此处，或点击选择图片</p>
+                <p class="sub-hint">支持 JPG、PNG、WebP 格式</p>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" multiple hidden>
+        </div>
+
+        <!-- 压缩设置面板 -->
+        <div class="compress-settings">
+            <div class="quality-control">
+                <label for="quality">压缩质量:</label>
+                <input type="range" id="quality" min="0" max="100" value="80">
+                <span id="qualityValue">80%</span>
+            </div>
+        </div>
+
+        <!-- 图片预览区域 -->
+        <div class="preview-area">
+            <div class="preview-container">
+                <div class="preview-original">
+                    <h3>原图</h3>
+                    <div class="image-container"></div>
+                    <div class="image-info"></div>
+                </div>
+                <div class="preview-compressed">
+                    <h3>压缩后</h3>
+                    <div class="image-container"></div>
+                    <div class="image-info"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下载按钮 -->
+        <button id="downloadBtn" class="download-btn" disabled>下载压缩后的图片</button>
+    </main>
+
+    <script src="../js/compress.js"></script>
+</body>
+</html> 
